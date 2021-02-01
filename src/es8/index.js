@@ -53,3 +53,40 @@ const data = {
   back: "gerlis"
 }
 
+
+//---------------------//-------------------//
+
+//Promise
+const helloWorld = () => {
+  return new Promise((resolve, reject) => {
+    (true) 
+    ? setTimeout(() => resolve("hello World"),3000)
+    : reject(new Error("test Error"))
+  })
+}
+
+//Async Await
+
+//Creamos una funcion y se la asignamos a una variable 
+// Y anteponemos la palabra async para indicar que es una funcion asincrona
+const helloAsync = async() => {
+
+  //Asignamos la funcion que retona la promesa a una variable
+    // Anteponiendo el await para que para la ejecucion del programa hasta 
+    // que tenga la respuesta de la promesa
+  const hello = await helloWorld()
+  console.log(hello)
+};
+
+helloAsync();
+
+//Async Await otra forma
+
+const anotherFunction = async() => {
+  try{
+    const hello = await helloWorld()
+    console.log(hello)
+  }catch(error){
+    console.log(error)
+  }
+}
